@@ -2,18 +2,18 @@ package com.example.thirsty
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.thirsty.databinding.ActivityMapsBinding
+import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.LatLngBounds
+import com.google.android.gms.maps.model.PointOfInterest
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnPoiClickListener {
 
-    private lateinit var mMap: GoogleMap
+    private lateinit var map: GoogleMap
     private lateinit var binding: ActivityMapsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,11 +38,42 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * installed Google Play services and returned to the app.
      */
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
+        map = googleMap
+
+        map.setOnPoiClickListener(this)
+
+        val options = GoogleMapOptions()
+        options.mapType(GoogleMap.MAP_TYPE_SATELLITE)
+            .compassEnabled(false)
+            .rotateGesturesEnabled(false)
+            .tiltGesturesEnabled(false)
 
         // Add a marker in Sydney and move the camera
-        val winnipeg = LatLng(-49.89, -97.14)
-        mMap.addMarker(MarkerOptions().position(winnipeg).title("Marker in Wpg"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(winnipeg))
+        val winnipeg = LatLng(49.89, -97.14)
+        map.addMarker(MarkerOptions().position(winnipeg).title("Marker in Wpg"))
+
+        cameraConfig()
     }
+
+    private fun cameraConfig(){
+        map.setMinZoomPreference(8.0f)
+        map.setMaxZoomPreference(15.0f)
+
+
+        val winnipegBounds = LatLngBounds(
+            LatLng((49.718), -97.409),  // SW bounds
+            LatLng((50.073), -96.976)   // NE bounds
+        )
+        map.setLatLngBoundsForCameraTarget(winnipegBounds)
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(winnipegBounds.center, 10f))
+    }
+
+    override fun onPoiClick(poi: PointOfInterest) {
+        Toast.makeText(this, """Clicked: ${poi.name}
+            Place ID:${poi.placeId}
+            Latitude:${poi.latLng.latitude} Longitude:${poi.latLng.longitude}""",
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
 }
