@@ -1,0 +1,122 @@
+[
+{
+    "id":"1",
+    "name":"Assiniboine River",
+    "latitude":"49.869061635518506",
+    "longitude":"-97.32554585116065"
+},
+{
+    "id":"2",
+    "name":"Assiniboine River",
+    "latitude":"49.872582223738775",
+    "longitude":"-97.31765170094343"
+},
+{
+    "id":"3",
+    "name":"Assiniboine River",
+    "latitude":"49.86634413912857",
+    "longitude":"-97.30797328062211"
+},
+{
+    "id":"4",
+    "name":"Assiniboine River",
+    "latitude":"49.8644617502879",
+    "longitude":"-97.29975518143905"
+},
+{
+    "id":"5",
+    "name":"Assiniboine River",
+    "latitude":"49.863214203759135",
+    "longitude":"-97.28820832060389"
+},
+{
+    "id":"6",
+    "name":"Assiniboine River",
+    "latitude":"49.859189493062594",
+    "longitude":"-97.28086675721644"
+},
+{
+    "id":"7",
+    "name":"Assiniboine River",
+    "latitude":"49.8702588817444",
+    "longitude":"-97.27907836896928"
+},
+{
+    "id":"8",
+    "name":"Assiniboine River",
+    "latitude":"49.87352327819085",
+    "longitude":"-97.25172021604482"
+},
+{
+    "id":"9",
+    "name":"Assiniboine River",
+    "latitude":"49.87555771050884",
+    "longitude":"-97.23016843751725"
+},
+{
+    "id":"10",
+    "name":"Assiniboine River",
+    "latitude":"49.874448800343025",
+    "longitude":"-97.20913340662432"
+},
+{
+    "id":"11",
+    "name":"Assiniboine River",
+    "latitude":"49.87831638454643",
+    "longitude":"-97.19403312306467"
+},
+{
+    "id":"12",
+    "name":"Assiniboine River",
+    "latitude":"49.87619314916651",
+    "longitude":"-97.17465610410324"
+},
+{
+    "id":"13",
+    "name":"Assiniboine River",
+    "latitude":"49.87851765318098",
+    "longitude":"-97.16233677387069"
+},
+{
+    "id":"14",
+    "name":"Assiniboine River",
+    "latitude":"49.873970066518226",
+    "longitude":"-97.1544942030309"
+},
+{
+    "id":"15",
+    "name":"Assiniboine River",
+    "latitude":"49.881149689137814",
+    "longitude":"-97.15323807638704"
+},
+{
+    "id":"16",
+    "name":"Assiniboine River",
+    "latitude":"49.88185614672877",
+    "longitude":"-97.14311659219528"
+},
+{
+    "id":"17",
+    "name":"Assiniboine River / Red River",
+    "latitude":"49.88579589341451",
+    "longitude":"-97.12742093602337"
+},
+{
+    "id":"18",
+    "name":"Assiniboine Forest Marsh",
+    "latitude":"49.853165922643925",
+    "longitude":"-97.2441454294924"
+},
+{
+    "id":"19",
+    "name":"South Tuxedo Pool",
+    "latitude":"49.849292099182485",
+    "longitude":"-97.22510086498941"
+},
+{
+    "id":"20",
+    "name":"Tuxedo Industrials 1",
+    "latitude":"49.8379406623985",
+    "longitude":"-97.21978548341741"
+}
+]
