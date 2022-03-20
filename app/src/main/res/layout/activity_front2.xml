@@ -30,9 +30,12 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="74dp"
-            android:indeterminate="true"
+            android:indeterminate="false"
             android:indeterminateTint="#03A9F4"
-            android:indeterminateTintMode="src_atop" />
+            android:indeterminateTintMode="src_atop"
+            android:progressTint="#03A9F4"
+            android:max="80"
+            android:scaleY="6" />
 
         <TextView
             android:id="@+id/waterCompleteTextView"
@@ -81,7 +84,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/fullButton"
         android:layout_width="169dp"
         android:layout_height="163dp"
         android:layout_marginEnd="16dp"
@@ -94,7 +97,7 @@
         />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/halfButton"
         android:layout_width="169dp"
         android:layout_height="162dp"
         android:layout_marginStart="16dp"

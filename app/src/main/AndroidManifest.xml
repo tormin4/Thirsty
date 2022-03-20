@@ -28,16 +28,11 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBN2RH2u8Hs-t47sTYnFQSc7_rPZwsxQXo" />
 
-        <!--<activity
+        <activity
             android:name=".MapsActivity"
             android:exported="true"
             android:label="@string/title_activity_maps">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> -->
+        </activity>
         <activity
             android:name=".FrontActivity"
             android:exported="true"
