@@ -1,4 +1,5 @@
 package com.example.thirsty
 
-data class Marker(val id: Int, val Name: String, val latitude: Double, val longitude: Double) {
+data class Marker(val id: Int, val name: String, val latitude: Double, val longitude: Double) {
 }
+
