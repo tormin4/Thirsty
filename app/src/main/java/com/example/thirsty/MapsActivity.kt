@@ -1,20 +1,23 @@
 package com.example.thirsty
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
-
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import androidx.appcompat.app.AppCompatActivity
 import com.example.thirsty.databinding.ActivityMapsBinding
 import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PointOfInterest
+import java.io.IOException
+import java.io.InputStream
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnPoiClickListener {
 
     private lateinit var map: GoogleMap
     private lateinit var binding: ActivityMapsBinding
+    private lateinit var markers: ArrayList<Marker>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,4 +79,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnPoiCli
         ).show()
     }
 
+    //loads jsonfile as string
+    fun loadJSONFromAsset(context: Context): String? {
+        var json: String? = null
+        json = try {
+            val inpStr = context.assets.open("file_name.json")
+            val size = inpStr.available()
+            val buffer = ByteArray(size)
+            inpStr.read(buffer)
+            inpStr.close()
+            String(buffer)
+        } catch (ex: IOException) {
+            ex.printStackTrace()
+            return null
+        }
+        return json
+    }
+
+    // returns list of markers
+    fun getMarkerList(fileStr : String) : ArrayList<Marker> {
+        return parse(loadJSONFromAsset(this)!!)
+    }
 }
