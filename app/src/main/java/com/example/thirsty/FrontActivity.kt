@@ -32,6 +32,7 @@ class FrontActivity : AppCompatActivity() {
         sButton.setOnClickListener{
             val mapint = Intent(this,MapsActivity::class.java)
             startActivity(mapint)
+
         }
 
             mProgressBar = findViewById<ProgressBar>(R.id.poggersbar)

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.thirsty.databinding.ActivityMapsBinding
@@ -26,7 +27,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnPoiCli
     private lateinit var map: GoogleMap
     private lateinit var binding: ActivityMapsBinding
     private lateinit var marker: Marker
+    private lateinit var qButton: Button
     private var TAG = "Info"
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +43,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnPoiCli
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
         autoCompleteSearch()
+
+
+        qButton = findViewById<Button>(R.id.buttonquenched)
+        qButton.setOnClickListener{
+            val frontint = Intent(this,FrontActivity::class.java)
+            startActivity(frontint)
+
+        }
+
     }
 
     /**
