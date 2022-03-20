@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.thirsty">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Thirsty">
-
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -25,7 +28,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBN2RH2u8Hs-t47sTYnFQSc7_rPZwsxQXo" />
 
-        <activity
+        <!--<activity
             android:name=".MapsActivity"
             android:exported="true"
             android:label="@string/title_activity_maps">
@@ -34,7 +37,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> -->
+        <activity
+            android:name=".FrontActivity"
+            android:exported="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen_water"
+            android:theme="@style/Theme.Thirsty.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+    </activity>
     </application>
 
 </manifest>

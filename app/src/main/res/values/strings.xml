@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Thirsty</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="api_Key">AIzaSyBN2RH2u8Hs-t47sTYnFQSc7_rPZwsxQXo</string>
+    <string name="title_activity_fullscreen_water">FullscreenWater</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
