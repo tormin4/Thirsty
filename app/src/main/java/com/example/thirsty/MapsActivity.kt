@@ -49,9 +49,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnPoiCli
         qButton.setOnClickListener{
             val frontint = Intent(this,FrontActivity::class.java)
             startActivity(frontint)
-
         }
-
     }
 
     /**
