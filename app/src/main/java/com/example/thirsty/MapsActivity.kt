@@ -12,6 +12,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PointOfInterest
 import java.io.IOException
 import java.io.InputStream
+import kotlin.math.pow
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnPoiClickListener {
 
@@ -97,7 +98,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnPoiCli
     }
 
     // returns list of markers
-    fun getMarkerList(fileStr : String) : ArrayList<Marker> {
+    fun getMarkerList() : ArrayList<Marker> {
         return parse(loadJSONFromAsset(this)!!)
     }
+
+    fun findClosestPoint() : Marker {
+        val currentPoint : LatLng = getCurrentPOS() //ur up riley
+        var currentBestPoint : Marker? = null
+        var currentBestPointLen : Double = 0.0
+        val markerList = getMarkerList()
+        for (a in 0 until (markerList as ArrayList<Marker>).length()) { //this code will be using true length, not track length (use if out of time)
+            val lenCurrPoint : Double = (markerList[a].latitude.pow(2) + markerList[a].longitude.pow(2)).pow(0.5)
+            if (lenCurrPoint > currentBestPointLen) {
+                currentBestPoint = markerList[a]
+                currentBestPointLen = lenCurrPoint
+            }
+        }
+        return currentBestPoint!!
+    }
 }
+
