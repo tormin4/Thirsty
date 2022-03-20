@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="#00000000"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.219">
+
+        <ProgressBar
+            android:id="@+id/poggersbar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="74dp"
+            android:indeterminate="true"
+            android:indeterminateTint="#03A9F4"
+            android:indeterminateTintMode="src_atop" />
+
+        <TextView
+            android:id="@+id/waterCompleteTextView"
+            android:layout_width="128dp"
+            android:layout_height="42dp"
+            android:layout_above="@+id/poggersbar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="116dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="Hydrated!"
+            android:textSize="24sp"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        style="@style/Widget.Material3.TextInputEditText.FilledBox"
+        android:layout_width="356dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Water Is Good"
+        android:fontFamily="@font/roboto"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonThirsty"
+        android:layout_width="176dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginBottom="52dp"
+        android:onClick="sendMessage"
+        android:text="Thirsty?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="169dp"
+        android:layout_height="163dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="#03A9F4"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/chevron_up_circle"
+        />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="169dp"
+        android:layout_height="162dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="#03A9F4"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/chevron_up_circle_outline"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
